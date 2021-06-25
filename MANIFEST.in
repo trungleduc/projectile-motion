@@ -1,0 +1,17 @@
+include cosapp.json
+include environment.yaml
+include LICENSE
+include HISTORY.md
+include README.md
+
+recursive-include projectile_motion/drivers *
+recursive-include projectile_motion/ports *
+recursive-include projectile_motion/resources *
+recursive-include projectile_motion/studies *
+recursive-include projectile_motion/systems *
+recursive-include projectile_motion/tests *
+recursive-include projectile_motion/tools *
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+
+prune **/.ipynb_checkpoints
