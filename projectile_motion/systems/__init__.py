@@ -5,7 +5,8 @@
 #
 # DO NOT MODIFY this file. It is automatically handled by CoSApp.
 import logging
-
+from cosapp.ports.units import add_unit
+add_unit("degree","rad*180")
 logger = logging.getLogger(__name__)
 
 

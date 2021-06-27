@@ -1,15 +1,15 @@
 from cosapp.systems import System
 import numpy
 from projectile_motion.tools import PointMassSolution
-
+from typing import Union
 
 class ProjectileMotion(System):
 
     def setup(self):
-        self.add_inward("mass", value=1.5, unit="kg", dtype=float, desc="Mass of projectile", limits=[0, 10])
-        self.add_inward("k", value=0.0, dtype=float, desc="Friction coefficient", limits=[0, 1])
-        self.add_inward("angle", value=50., dtype=float, desc="Launch angle", limits=[0, 90])
-        self.add_inward("speed", value=12.5, unit="m/s", dtype=float, desc="Launch speed", limits=[0, 20])
+        self.add_inward("mass", value=1.5, unit="kg", dtype=(int,float), desc="Mass of projectile", limits=[0, 10])
+        self.add_inward("k", value=0.0, dtype=(int,float), desc="Friction coefficient", limits=[0, 1])
+        self.add_inward("angle", value=50., dtype=(int,float),unit="degree", desc="Launch angle", limits=[0, 90])
+        self.add_inward("speed", value=12.5, unit="m/s", dtype=(int,float), desc="Launch speed", limits=[0, 20])
 
         self.add_outward("coordinate", numpy.zeros(0),  desc="Coordinate of projectile")
         self.add_outward("spd",  numpy.zeros(0), desc="Speed of projectile")
